@@ -1,0 +1,49 @@
+# ~/.inputrc - local inputrc for libreadline
+# See readline(3readline) and `info rluserman' for more information.
+
+set editing-mode vi
+set show-mode-in-prompt on
+# '\1' and '\2' used to begin and end sequences of non-printing characters
+set vi-ins-mode-string "[\1\e[0;31m\2i\1\e[0m\2] "
+set vi-cmd-mode-string "[\1\e[0;32m\2c\1\e[0m\2] "
+
+set bell-style none
+set completion-ignore-case on
+set show-all-if-ambiguous on
+#set show-all-if-unmodified on
+set expand-tilde off
+set match-hidden-files off
+
+# append slash to tab-completed directory symlinks
+set mark-symlinked-directories on
+
+$if mode=vi
+    # insert mode bindings
+    set keymap vi-insert
+
+    # use jk to exit insert mode
+    "jk": vi-movement-mode
+
+    # override default binding of unix-word-rubout so that '/' is also used as a
+    # delimiter; bind-tty-special-chars must be off
+    set bind-tty-special-chars off
+    "\C-w": unix-filename-rubout
+
+    # set tab to cycle through auto-complete suggestions instead of listing them;
+    # must be placed after setting vi editing-mode
+    "\C-i": menu-complete
+
+    # set alternative keys for tab completion
+    "\C-n": menu-complete
+    "\C-p": menu-complete-backward
+
+    # search history for string up to cursor position
+    "\C-j": history-search-forward
+    "\C-k": history-search-backward
+
+    # only works in command mode by default
+    "\C-l": clear-screen
+
+    # command mode bindings
+    #set keymap vi-command
+$endif

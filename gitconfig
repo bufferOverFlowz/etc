@@ -1,0 +1,47 @@
+; references:
+; 	`man gitglossary`
+; 	`man gitrevisions`
+[user]
+	name = Sheldon Phillips
+	email = sheldon.phillips1991@gmail.com
+[color]
+	ui = true
+[color "diff"]
+	; see 'git help config' /color.diff.<slot> for more options
+	meta = cyan
+	frag = magenta bold
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+[core]
+	editor = vim
+[commit]
+	; show diff preview during commit message edits (i.e. `commit`, `rebase --continue`)
+	verbose = true
+[pull]
+	ff = only		; fast-forward only
+	; rebase = true		; false=merge (default), true=rebase
+[merge]
+	conflictstyle = diff3
+	tool = vimdiff
+	prompt = true
+[stash]
+	showPatch = true
+[rerere]
+	enabled = true
+[push]
+	default = simple
+[fetch]
+	prune = true
+[log]
+	decorate = full
+[status]
+	submoduleSummary = true
+[alias]
+	br = branch -vv
+	ci = commit
+	co = checkout
+	dfc = diff --cached
+	df = diff
+	st = status
