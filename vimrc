@@ -3,7 +3,7 @@ set nocompatible    " set explicitly since not set when vimrc sourced with '-u' 
 " easier to reach than \
 let mapleader = " "
 " easier to reach than Esc or Ctrl-[
-"inoremap jk <Esc>
+inoremap jk <Esc>
 
 set backspace=indent,eol,start  " make backspace work like 'normal' text editors
 
