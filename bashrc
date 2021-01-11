@@ -94,10 +94,12 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# user added aliases
 alias g='git'
 alias ip='ip -brief -color'
 alias etlog='sudo etckeeper vcs log'
 alias py='python3'
+alias dirty='grep -i dirty /proc/meminfo'
 
 # enable colours in less for man pages
 man() {
