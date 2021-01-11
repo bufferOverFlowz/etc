@@ -99,7 +99,7 @@ alias g='git'
 alias ip='ip -brief -color'
 alias etlog='sudo etckeeper vcs log'
 alias py='python3'
-alias dirty='grep -i dirty /proc/meminfo'
+alias dtm='watch -n1 grep -i dirty /proc/meminfo'
 
 # enable colours in less for man pages
 man() {
