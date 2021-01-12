@@ -101,6 +101,7 @@ alias etlog='sudo etckeeper vcs log'
 alias py='python3'
 alias dtm='watch -n1 grep -i dirty /proc/meminfo'
 alias gitc='git commit'
+alias gitp='git push -u origin master' #only works with origin and master branch
 
 # enable colours in less for man pages
 man() {
