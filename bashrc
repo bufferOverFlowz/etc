@@ -100,6 +100,7 @@ alias ip='ip -brief -color'
 alias etlog='sudo etckeeper vcs log'
 alias py='python3'
 alias dtm='watch -n1 grep -i dirty /proc/meminfo'
+alias gitc='git commit'
 
 # enable colours in less for man pages
 man() {
