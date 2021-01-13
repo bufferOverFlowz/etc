@@ -59,7 +59,10 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    
+    # Add Kali Linux 2020 style cmd prompt
+    PS1="\n \[\033[0;32m\]┌─────(\[\033[1;32m\]\u\[\033[0;32m\])─────(\[\033[1;32m\]\w\[\033[0;32m\]) \n └> \[\033[1;32m\]\$ \[\033[0m\]" 
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -97,7 +100,7 @@ alias la='ls -A'
 alias ip='ip -brief -color'
 alias etlog='sudo etckeeper vcs log'
 alias py='python3'
-alias dtm='watch -n1 grep -i dirty /proc/meminfo'
+alias dtm='watch -n1 grep -i dirty /proc/meminfo' #monitors /proc/meminfo every 1 second
 alias open='xdg-open' # adds open file, works for PDFs
 
 # user added git aliases
