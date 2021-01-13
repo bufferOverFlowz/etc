@@ -92,14 +92,17 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
 
 # user added aliases
-alias g='git'
 alias ip='ip -brief -color'
 alias etlog='sudo etckeeper vcs log'
 alias py='python3'
 alias dtm='watch -n1 grep -i dirty /proc/meminfo'
+alias open='xdg-open' # adds open file, works for PDFs
+
+# user added git aliases
+alias g='git'
+alias ga='git add .'
 alias gitc='git commit'
 alias gitp='git push -u origin master' #only works with origin and master branch
 
