@@ -6,6 +6,26 @@ set nocompatible    " set explicitly since not set when vimrc sourced with '-u' 
      set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 endif
 
+" *****************************************************************
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+" vim-plug - automatic install of plugings for vim-plug
+" Don't forget to vim +PlugUpdate. Warning Curl will not run in dos
+" *****************************************************************
+if !has("win32") 
+    if empty(glob('~/.vim/autoload/plug.vim'))
+      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+endif
+
+call plug#begin('~/.vim/plugged')
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'SirVer/ultisnips'
+" Track the engine.
+Plug 'honza/vim-snippets' 
+call plug#end()
+
 " easier to reach than \
 let mapleader = " "
 " easier to reach than Esc or Ctrl-[
