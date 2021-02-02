@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Check for .vim
-[ ! -d "~/.vim" ] && mkdir ~/.vim
+# Check for snippet dir if found add custom snippets
+[[ -d ~/.vim/plugged/vim-snippets ]] && \
+    cp -rf ~/etc/vim/snippets/* ~/.vim/plugged/vim-snippets/snippets/
 
 rm -fv ~/.bashrc
 rm -fv ~/.gitconfig
@@ -11,9 +12,6 @@ rm -fv ~/.profile
 rm -fv ~/.tmux.conf
 rm -fv ~/.vimrc
 
-# Remove current .vim and pull custom
-rm -rf ~/.vim/
-cp -R ~/etc/vim ~/.vim
 
 ln -vs ~/etc/bashrc ~/.bashrc
 ln -vs ~/etc/gitconfig ~/.gitconfig

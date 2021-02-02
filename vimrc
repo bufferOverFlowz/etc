@@ -19,12 +19,14 @@ if !has("win32")
     endif
 endif
 
-call plug#begin('~/.vim/plugged')
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'SirVer/ultisnips'
-" Track the engine.
-Plug 'honza/vim-snippets' 
-call plug#end()
+if !has("win32") 
+    call plug#begin('~/.vim/plugged')
+    " Snippets are separated from the engine. Add this if you want them:
+    Plug 'SirVer/ultisnips'
+    " Track the engine.
+    Plug 'honza/vim-snippets' 
+    call plug#end()
+endif
 
 " easier to reach than \
 let mapleader = " "
@@ -80,7 +82,7 @@ if has("gui_running")
     " gVim specific
 
     " gVim interface modification
-    "set guioptions-=m " remove menu bar
+    set guioptions-=m " remove menu bar
     "set guioptions-=T " remove toolbar
 endif
 
