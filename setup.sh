@@ -12,7 +12,7 @@ rm -fv ~/.profile
 rm -fv ~/.tmux.conf
 rm -fv ~/.vimrc
 
-
+# Link etc confs with ~
 ln -vs ~/etc/bashrc ~/.bashrc
 ln -vs ~/etc/gitconfig ~/.gitconfig
 ln -vs ~/etc/gitignore ~/.gitignore
