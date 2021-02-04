@@ -147,12 +147,3 @@ endif
 " toggle paste and show current value ('pastetoggle' doesn't)
 nnoremap <Leader>p :set paste! paste?<CR>
 "set pastetoggle=<Leader>p
-"
-"Include skeleton or template in ~/.vim/temp...
-"if has("autocmd")
-"    augroup templates
-"          autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh "bash script
-"          autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html "HTML code
-"          autocmd BufNewFile *.php 0r ~/.vim/templates/skeleton.php "PHP code
-"    augroup END
-"endif
