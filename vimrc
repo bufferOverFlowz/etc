@@ -25,8 +25,22 @@ if !has("win32")
     Plug 'SirVer/ultisnips'
     " Track the engine.
     Plug 'honza/vim-snippets' 
+   " You complete me IDE like functions 
+    Plug 'Valloric/YouCompleteMe'
+   " Help you Snippets and Youcomplete work together 
+    Plug 'ervandew/supertab'
     call plug#end()
 endif
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " easier to reach than \
 let mapleader = " "
