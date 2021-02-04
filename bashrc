@@ -37,6 +37,15 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+exitstatus()
+{
+    if [[ $? == 0 ]]; then
+        echo "(T)"
+    else
+        echo "(F)"
+    fi
+}
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -59,7 +68,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]$(exitstatus):\[\033[01;34m\]\w\[\033[00m\]\$ '
     
     # Add Kali Linux 2020 style cmd prompt
     #PS1="\n \[\033[1;32m\]┌─────(\[\033[1;32m\]\u\[\033[1;32m\])─────(\[\033[1;32m\]\w\[\033[1;32m\]) \n └> \[\033[1;32m\]\$ \[\033[0m\]" 
