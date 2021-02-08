@@ -17,9 +17,7 @@ if !has("win32")
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
       autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     endif
-endif
 
-if !has("win32") 
     call plug#begin('~/.vim/plugged')
     " Snippets are separated from the engine. Add this if you want them:
     Plug 'SirVer/ultisnips'
@@ -30,17 +28,17 @@ if !has("win32")
    " Help you Snippets and Youcomplete work together 
     Plug 'ervandew/supertab'
     call plug#end()
+
+    " make YCM compatible with UltiSnips (using supertab)
+    let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+    let g:SuperTabDefaultCompletionType = '<C-n>'
+
+    " better key bindings for UltiSnipsExpandTrigger
+    let g:UltiSnipsExpandTrigger = "<tab>"
+    let g:UltiSnipsJumpForwardTrigger = "<tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " easier to reach than \
 let mapleader = " "
