@@ -6,11 +6,11 @@ set nocompatible    " set explicitly since not set when vimrc sourced with '-u' 
      set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 endif
 
-" *****************************************************************
+" *********************************************************************
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 " vim-plug - automatic install of plugings for vim-plug
 " Don't forget to vim +PlugUpdate. Warning Curl will not run in dos
-" *****************************************************************
+" ********************************************************************
 if !has("win32") 
     if empty(glob('~/.vim/autoload/plug.vim'))
       silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -23,7 +23,10 @@ if !has("win32")
     Plug 'SirVer/ultisnips'
     " Track the engine.
     Plug 'honza/vim-snippets' 
-   " You complete me IDE like functions 
+   "****************************************************************
+   " You complete me IDE like functions - don't forget to insall.py
+   " Follow install instructions on https://github.com/ycm-core/ycmd
+   "****************************************************************
     Plug 'Valloric/YouCompleteMe'
    " Help you Snippets and Youcomplete work together 
     Plug 'ervandew/supertab'
