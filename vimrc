@@ -23,12 +23,12 @@ if !has("win32")
     Plug 'SirVer/ultisnips'
     " Track the engine.
     Plug 'honza/vim-snippets' 
-   "****************************************************************
-   " You complete me IDE like functions - don't forget to insall.py
-   " Follow install instructions on https://github.com/ycm-core/ycmd
-   "****************************************************************
+    "****************************************************************
+    " You complete me IDE like functions - don't forget to insall.py
+    " Follow install instructions on https://github.com/ycm-core/ycmd
+    "****************************************************************
     Plug 'Valloric/YouCompleteMe'
-   " Help you Snippets and Youcomplete work together 
+    " Help you Snippets and Youcomplete work together 
     Plug 'ervandew/supertab'
     call plug#end()
 
