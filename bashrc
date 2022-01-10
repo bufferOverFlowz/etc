@@ -41,7 +41,7 @@ fi
 get_last_exit_status() {
     local last_exit_status=$?
     if [[ $last_exit_status -ne 0 ]]; then
-        echo "(error:$last_exit_status)$"
+        echo "(Error:$last_exit_status)$"
     fi
 }
 
